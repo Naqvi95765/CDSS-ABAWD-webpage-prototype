@@ -10,4 +10,20 @@ if(id==='participant'){el.innerHTML=`<button class="back" onclick="go('main')">�
 if(id==='apply'){el.innerHTML=`<button class="back" onclick="go('participant')">‹ Back to all participant tiles</button>${hero(1,'▤','Do the work requirements apply to me?','Find out if you may be subject to ABAWD work requirements.')}<div class="grid">${topics.map(card).join('')}</div><div class="note"><b>Note:</b> This prototype provides general information only. Your county determines whether work requirements apply to your case. The pre-screening tool should link to the existing CDSS resource after approval.</div>`;return}
 if(id==='check'){el.innerHTML=`<button class="back" onclick="go('apply')">‹ Back to tile 1</button>${hero(1,'▣','Check if ABAWD applies to you','Use the existing CDSS pre-screening resource.')}<div class="subpage"><div class="box"><h2>Pre-screening information</h2><p>This prototype does not calculate eligibility or make an official determination. The final site should link directly to the existing CDSS pre-screening tool.</p><button class="primary" onclick="go('county')">Where can I get help?</button></div></div>`;return}
 const x=info[id];if(x){const p=participant.find(z=>z.id===id);el.innerHTML=`<button class="back" onclick="go('${topics.some(t=>t.id===id)?'apply':'participant'}')">‹ Back to ${topics.some(t=>t.id===id)?'tile 1':'all participant tiles'}</button>${hero(p?.n||'•',p?.icon||'▤',x[0],'Information and resources')}<div class="subpage"><div class="box"><h2>${x[0]}</h2><p>${x[1]}</p><p><strong>For CDSS review:</strong> Add approved source links, verified policy text, and accessibility-tested content before publishing.</p><button class="primary" onclick="go('participant')">View all participant tiles</button></div></div>`;return}go('apply')};window.addEventListener('hashchange',render);render();
-</script></body></html>
+
+</script>
+
+<section id="sitemap" style="max-width:1400px;margin:40px auto;padding:24px;background:white;border-radius:12px;">
+  <h2 style="color:#073f78;">Proposed CDSS ABAWD Site Map</h2>
+  <p>View the proposed organization of CalFresh ABAWD information and resources.</p>
+
+  <img
+    src="ABAWD-Sitemap.png"
+    alt="Proposed CDSS ABAWD sitemap"
+    style="width:100%;height:auto;border:1px solid #ddd;border-radius:10px;"
+  >
+</section>
+
+</body>
+</html>
+
